@@ -36,7 +36,7 @@
               <th>Tgl Surat</th>
               <!-- <th>Pengirim</th> -->
               <th>Perihal</th>
-              <th>dibaca</th>
+              
               <!-- <th>disposisi</th> -->
               <th class="text-center" width="170"></th>
             </tr>
@@ -54,11 +54,7 @@
                   <td><?php echo $baris->tgl_no_asal; ?></td>
                   <!-- <td><?php echo $baris->pengirim; ?></td> -->
                   <td><?php echo $baris->perihal; ?></td>
-                  <td><?php
-                        if ($baris->dibaca == 1) {?>
-                            <button type="button" class="btn btn-success"><i class="icon-checkmark4"></i></button>
-                      <?php
-                        }?>
+                  
                   </td>
                   <!-- <td><?php
                         if ($baris->disposisi == 1) {?>

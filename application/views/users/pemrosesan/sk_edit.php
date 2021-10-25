@@ -9,7 +9,7 @@ $( function() {
 
 
 <!-- Main content -->
-<div class="content-wrapper">
+<div class="content-wrapper" >
   <!-- Content area -->
   <div class="content">
 
@@ -19,7 +19,7 @@ $( function() {
       <div class="col-md-8">
         <div class="panel panel-flat">
 
-            <div class="panel-body">
+            <div class="panel-body" style="background-color: #EEC4C4">
 
               <!-- <fieldset class="content-group">
                 <legend class="text-bold"><i class="icon-folder-upload2"></i> Edit Surat Keluar</legend>
@@ -68,8 +68,8 @@ $( function() {
     									</div>
                     </div> --> 
 
-                    <div class="form-group">
-                      <label class="control-label col-lg-3"><b>Unduh File</b></label>
+                    <div class="form-group" >
+                      <label class="control-label col-lg-3"><b><b5>UNDUH FILE : <b5></b></label>
                       <div class="col-lg-12">
                         <table class="table table-bordered" width="100%">
                           <tr style="background:#222;color:#f1f1f1;">

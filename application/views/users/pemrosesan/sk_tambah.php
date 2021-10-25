@@ -4,9 +4,6 @@
 $( function() {
   $( "#tgl_ns" ).datepicker();
 } );
-$( function() {
-  $( "#tgl_no_asal" ).datepicker();
-} );
 </script>
 <script type="text/javascript" src="assets/js/core/app.js"></script>
 
@@ -20,11 +17,10 @@ $( function() {
   border: 2px dashed #0087F7;
 }
 </style>
-
 <?php
-$this->db->order_by('id_sm', 'DESC');
+$this->db->order_by('id_sk', 'DESC');
 $this->db->limit(1);
-$cek_ns = $this->db->get('tbl_sm');
+$cek_ns = $this->db->get('tbl_sk');
 if ($cek_ns->num_rows() == 0) {
   $no_surat       = "2020/PD3/TU/001";
 }else{
@@ -33,6 +29,7 @@ if ($cek_ns->num_rows() == 0) {
   $no_surat				= "2020/PD3/TU/".sprintf("%03s", $noUrut);
 }
 ?>
+
 <!-- Main content -->
 <div class="content-wrapper">
   <!-- Content area -->
@@ -44,26 +41,29 @@ if ($cek_ns->num_rows() == 0) {
       <div class="col-md-8">
         <div class="panel panel-flat">
 
-            <div class="panel-body">
+            <div class="panel-body" style="background-color: #EEC4C4">
 
               <fieldset class="content-group">
-                <legend class="text-bold"><i class="icon-folder-download2"></i> Tambah Surat Masuk Baru</legend>
+                <legend class="text-bold"></i>Arsip Surat >> Unggah</legend>
+                <legend class="text-bold"></i>Unggah surat yang telah terbit pada form ini untuk diarsipkan</legend>
                 <?php
                 echo $this->session->flashdata('msg');
                 ?>
                 <div class="msg"></div>
-                <form class="form-horizontal" action="users/sm"  enctype="multipart/form-data" method="post">
-                    <!-- <div class="form-group">
+                <form class="form-horizontal" action="users/sk"  enctype="multipart/form-data" method="post">
+                    <div class="form-group">
                       <label class="control-label col-lg-3">Nomor</label>
                       <div class="col-lg-5">
                         <div class="input-group">
                           <span class="input-group-addon"><i class="icon-database"></i></span>
-                          <select class="form-control cari_ns" name="ns" id="ns" required>
+                          <!-- <select class="form-control cari_ns" name="ns" id="ns" required>
                             <option value=""></option>
                             <?php foreach ($data_ns as $baris): ?>
                                 <option value="<?php echo $baris->no_surat; ?>"><?php echo $baris->no_surat; ?></option>
                             <?php endforeach; ?>
-                          </select>
+                          </select> -->
+                          <input type="text" name="nsx" id="nsx" class="form-control" placeholder="" value="<?php echo $no_surat; ?>" required readonly>
+                          <input type="hidden" name="ns" id="ns" class="form-control" placeholder="" value="<?php echo $no_surat; ?>" required>
                         </div>
                       </div>
                       <div class="col-lg-4">
@@ -72,46 +72,28 @@ if ($cek_ns->num_rows() == 0) {
                           <input type="text" name="tgl_ns" class="form-control daterange-single" id="tgl_ns" value="<?php echo date('d-m-Y'); ?>" maxlength="10" required placeholder="Masukkan Tanggal">
                         </div>
                       </div>
-                    </div> -->
-
-                    <div class="form-group">
-                      <label class="control-label col-lg-3">No. Surat</label>
-                      <div class="col-lg-5">
-    												<input type="text" name="no_asalx" id="no_asalx" class="form-control" placeholder="" value="<?php echo $no_surat; ?>" required readonly>
-                            <input type="hidden" name="no_asal" id="no_asal" class="form-control" placeholder="" value="<?php echo $no_surat; ?>" required>
-    									</div>
-                      <div class="col-lg-4">
-                        <div class="input-group">
-                          <span class="input-group-addon"><i class="icon-calendar"></i></span>
-                          <input type="text" name="tgl_no_asal" class="form-control daterange-single" id="tgl_no_asal" value="<?php echo date('d-m-Y'); ?>" maxlength="10" required placeholder="Masukkan Tanggal">
-                        </div>
-                      </div>
                     </div>
 
                     <div class="form-group">
-                      <label class="control-label col-lg-3">Penerima</label>
+                      <label class="control-label col-lg-3">Kategori</label>
                       <div class="col-lg-9">
-    												<!-- <input type="text" name="pengirim" id="pengirim" class="form-control" placeholder=""> -->
-                            <select class="form-control cari_penerima" name="penerima" id="penerima" required>
-                              <option value=""></option>
+    												<input type="text" name="penerima" id="penerima" class="form-control" placeholder="">
+                            <select class="form-control cari_bag" name="bagian">
+                              <option value="">- Pilih Kategori -</option>
                               <?php
-                              $this->db->order_by('nama_lengkap', 'ASC');
-                                    foreach ($this->db->get('tbl_user')->result() as $baris): ?>
-                                        <option value="<?php echo $baris->nama_lengkap; ?>"><?php echo $baris->nama_lengkap; ?></option>
-                              <?php endforeach; ?>
+                              foreach ($bagian as $baris) {?>
+                                <option value="<?php echo $baris->id_bagian; ?>">Undangan<?php; ?></option>
+                                <option value="<?php echo $baris->id_bagian; ?>"><?php echo $baris->nama_bagian; ?></option>
+                                <option value="<?php echo $baris->id_bagian; ?>"><?php echo $baris->nama_bagian; ?></option>
+                                <option value="<?php echo $baris->id_bagian; ?>"><?php echo $baris->nama_bagian; ?></option>
+                              <?php
+                              } ?>
                             </select>
     									</div>
                     </div>
 
-                    <!-- <div class="form-group">
-                      <label class="control-label col-lg-3">Penerima</label>
-                      <div class="col-lg-9">
-    												<input type="text" name="penerima" id="penerima" class="form-control" placeholder="">
-    									</div>
-                    </div> -->
-
                     <div class="form-group">
-                      <label class="control-label col-lg-3">Perihal</label>
+                      <label class="control-label col-lg-3">Judul</label>
                       <div class="col-lg-9">
     												<input type="text" name="perihal" id="perihal" class="form-control" placeholder="">
     									</div>
@@ -122,15 +104,15 @@ if ($cek_ns->num_rows() == 0) {
                       <div class="col-lg-12">
                           <div class="dropzone" id="myDropzone">
                             <div class="dz-message">
-                             <h3> Klik atau Drop Lampiran disini</h3>
+                             <h3> Browse File...</h3>
                             </div>
                           </div>
-                          <i style="color:red">*Lampiran wajib diisi</i>
+                        
     									</div>
                     </div>
 
                     <hr>
-                    <a href="users/sm" class="btn btn-default"><< Kembali</a>
+                    <a href="users/sk" class="btn btn-default"><< Kembali</a>
                     <button type="submit" id="submit-all" class="btn btn-primary" style="float:right;">Kirim</button>
                 </form>
 
@@ -139,9 +121,8 @@ if ($cek_ns->num_rows() == 0) {
                         $(".cari_ns").select2({
                             placeholder: "Pilih nomor"
                         });
-
-                        $(".cari_penerima").select2({
-                            placeholder: "Pilih Nama Cabang"
+                        $(".cari_bag").select2({
+                            placeholder: "- Pilih Bagian -"
                         });
                     });
                 </script>
@@ -162,7 +143,7 @@ $('.msg').html('');
 Dropzone.options.myDropzone = {
 
   // Prevents Dropzone from uploading dropped files immediately
-  url: "<?php echo base_url('users/sm') ?>",
+  url: "<?php echo base_url('users/sk') ?>",
   paramName:"userfile",
   // acceptedFiles:"'file/doc','file/xls','file/xlsx','file/docx','file/pdf','file/txt',image/jpg,image/jpeg,image/png,image/bmp",
   autoProcessQueue: false,
@@ -205,9 +186,6 @@ Dropzone.options.myDropzone = {
     this.on("sending", function(data, xhr, formData) {
             formData.append("ns", jQuery("#ns").val());
             formData.append("tgl_ns", jQuery("#tgl_ns").val());
-            formData.append("no_asal", jQuery("#no_asal").val());
-            formData.append("tgl_no_asal", jQuery("#tgl_no_asal").val());
-            formData.append("pengirim", jQuery("#pengirim").val());
             formData.append("penerima", jQuery("#penerima").val());
             formData.append("perihal", jQuery("#perihal").val());
     });
@@ -235,12 +213,12 @@ Dropzone.options.myDropzone = {
                                           '     <button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
                                           '       <span aria-hidden="true">&times;&nbsp; &nbsp;</span>'+
                                           '     </button>'+
-                                          '     <strong>Sukses!</strong> Surat Masuk berhasil dikirim.'+
+                                          '     <strong>Sukses!</strong> Surat Keluar berhasil dikirim.'+
                                           '  </div>');
-                            $("#no_asal").focus();
+                            $("#penerima").focus();
 
-                            alert('Sukses, Surat Masuk berhasil dikirim');
-                            window.location="<?php echo base_url(); ?>users/sm/t";
+                            alert('Sukses, Surat Keluar berhasil dikirim');
+                            window.location="<?php echo base_url(); ?>users/sk/t";
                 //     }
                 // });
 

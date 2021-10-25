@@ -1929,7 +1929,6 @@ define('main',[
 	for (var idx in models) {
 		PignoseCalendar[idx] = models[idx];
 	}
-
 	return PignoseCalendar;
 });
 define('plugin',[

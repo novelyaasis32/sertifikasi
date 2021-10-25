@@ -1,14 +1,14 @@
 <!-- Main content -->
 <div class="content-wrapper">
   <!-- Content area -->
-  <div class="content">
+  <div class="content" style="background-color: #EEC4C4">
     <?php
     echo $this->session->flashdata('msg');
     ?>
     <!-- Dashboard content -->
-    <div class="row">
+    <div class="row" style="background-color: #EEC4C4">
       <!-- Basic datatable -->
-      <div class="panel panel-flat">
+      <div class="panel panel-flat" >
         <div class="panel-heading">
           <h5 class="panel-title"></i> Arsip Surat</h5>
           <h7 class="panel-title"></i>   </h7>
@@ -37,8 +37,7 @@
               <th>Nomor Surat</th>
               <th>Waktu Pengarsipan</th>
               <th>Pengirim</th>
-              <th>Kategori</th>
-              
+              <th>Kategori</th>              
               <th>Keterangan</th>
               <th class="text-center" width="170"></th>
             </tr>

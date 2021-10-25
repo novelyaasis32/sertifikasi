@@ -120,7 +120,7 @@ CREATE TABLE `tbl_sk` (
   `id_bagian` int(10) NOT NULL,
   `token_lampiran` text,
   `id_user` int(10) DEFAULT NULL,
-  `dibaca` int(1) NOT NULL,
+ 
   `disposisi` text NOT NULL,
   `peringatan` int(1) NOT NULL,
   `tgl_sk` varchar(12) DEFAULT NULL
@@ -142,7 +142,7 @@ CREATE TABLE `tbl_sm` (
   `penerima` text,
   `perihal` text,
   `token_lampiran` varchar(100) DEFAULT NULL,
-  `dibaca` int(1) NOT NULL,
+  
   `disposisi` int(1) NOT NULL,
   `id_user` int(10) DEFAULT NULL,
   `tgl_sm` varchar(12) DEFAULT NULL
@@ -154,20 +154,20 @@ CREATE TABLE `tbl_sm` (
 -- Struktur dari tabel `tbl_user`
 --
 
-CREATE TABLE `tbl_user` (
-  `id_user` int(10) NOT NULL,
-  `username` varchar(100) DEFAULT NULL,
-  `password` text NOT NULL,
-  `nama_lengkap` varchar(100) DEFAULT NULL,
-  `email` text,
-  `alamat` text,
-  `telp` varchar(30) DEFAULT NULL,
-  `pengalaman` text,
-  `level` enum('s_admin','admin','user') DEFAULT NULL,
-  `status` varchar(30) DEFAULT NULL,
-  `tgl_daftar` varchar(20) DEFAULT NULL,
-  `terakhir_login` varchar(20) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+-- CREATE TABLE `tbl_user` (
+--   `id_user` int(10) NOT NULL,
+--   `username` varchar(100) DEFAULT NULL,
+--   `password` text NOT NULL,
+--   `nama_lengkap` varchar(100) DEFAULT NULL,
+--   `email` text,
+--   `alamat` text,
+--   `telp` varchar(30) DEFAULT NULL,
+--   `pengalaman` text,
+--   `level` enum('s_admin','admin','user') DEFAULT NULL,
+--   `status` varchar(30) DEFAULT NULL,
+--   `tgl_daftar` varchar(20) DEFAULT NULL,
+--   `terakhir_login` varchar(20) DEFAULT NULL
+-- ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_user`

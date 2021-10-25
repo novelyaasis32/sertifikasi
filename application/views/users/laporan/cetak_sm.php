@@ -7,19 +7,6 @@
   </head>
   <body onload="window.print()">
 
-    <!-- <table border="0" width="100%">
-      <tr>
-        <td width="120">
-          <img src="foto/logo1.png" alt="logo1" width="120">
-        </td>
-        <td align="center">
-          <h1>Aplikasi Surat Menyurat</h1>
-        </td>
-        <td width="120">
-          <img src="foto/logo2.png" alt="logo2" width="120">
-        </td>
-      </tr>
-    </table> -->
 
     <hr>
 

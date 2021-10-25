@@ -19,10 +19,10 @@ $( function() {
       <div class="col-md-8">
         <div class="panel panel-flat">
 
-            <div class="panel-body">
+            <div class="panel-body" style="background-color: #EEC4C4">
 
               <fieldset class="content-group">
-                <legend class="text-bold"></i> Arsip Surat >> Unggah </legend>
+                <legend class="text-bold"><i class="icon-folder-upload2"></i> ARSIP SURAT >> UNGGAH</legend>
                 <?php
                 echo $this->session->flashdata('msg');
                 ?>
@@ -52,14 +52,9 @@ $( function() {
     												<input type="text" name="penerima" id="penerima" class="form-control" value="<?php echo $query->nama_lengkap; ?>" placeholder="">
     									</div>
                     </div>
+
                     <div class="form-group">
                       <label class="control-label col-lg-3">Judul</label>
-                      <div class="col-lg-9">
-    												<input type="text" name="perihal" id="perihal" class="form-control" value="<?php echo $query->perihal; ?>" placeholder="">
-    									</div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-lg-3">Perihal</label>
                       <div class="col-lg-9">
     												<input type="text" name="perihal" id="perihal" class="form-control" value="<?php echo $query->perihal; ?>" placeholder="">
     									</div>
