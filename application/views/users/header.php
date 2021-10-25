@@ -156,11 +156,7 @@ $sub_menu3 = strtolower($this->uri->segment(3));
 								
 								<!-- /main -->
 
-								<!-- Logout -->
-								<li class="navigation-header"><span>KELUAR</span> <i class="icon-menu" title="Forms"></i></li>
-								<li><a href="web/logout"><i class="icon-switch2"></i> <span>Logout </span></a></li>
-
-								<!-- /logout -->
+								
 
 							</ul>
 						</div>
