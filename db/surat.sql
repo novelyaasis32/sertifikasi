@@ -38,14 +38,7 @@ CREATE TABLE `tbl_bagian` (
 -- Dumping data untuk tabel `tbl_bagian`
 --
 
-INSERT INTO `tbl_bagian` (`id_bagian`, `nama_bagian`, `id_user`) VALUES
-(6, 'Kepala Desa', 5),
-(7, 'Bendahara', 5),
-(8, 'Sekdes', 5),
-(9, 'Kaur Umum', 5),
-(10, 'Kaur Keuangan', 5),
-(11, 'Kaur Pemerintahan', 5),
-(12, 'Kaur Kesra', 5);
+
 
 -- --------------------------------------------------------
 
@@ -63,20 +56,15 @@ CREATE TABLE `tbl_lampiran` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_memo`
+
 --
 
-CREATE TABLE `tbl_memo` (
-  `id_memo` int(10) NOT NULL,
-  `judul_memo` text,
-  `memo` text,
-  `id_user` int(10) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_ns`
+
 --
 
 CREATE TABLE `tbl_ns` (
