@@ -161,10 +161,7 @@ CREATE TABLE `tbl_sm` (
 -- Dumping data untuk tabel `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `nama_lengkap`, `email`, `alamat`, `telp`, `pengalaman`, `level`, `status`, `tgl_daftar`, `terakhir_login`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'KEPALA DESA', 'anwarsptr@gmail.com', 'negarabumi', '453454', 'ok', 's_admin', 'aktif', '07-10-2017 17:03:12', '18-05-2020 08:44:49'),
-(5, 'admin2', 'c84258e9c39059a89ab77d846ddab909', 'KAUR UMUM', 'herusp49@gmail.com', 'Negarabumi', '4646546', 'ok', 'admin', 'aktif', '07-10-2017 17:30:08', '18-05-2020 08:43:46'),
-(6, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'SEKRETARIS DESA', 'herusp49@gmail.com', 'negarabumi', '0987775', 'ok', 'user', 'aktif', '07-10-2017 17:31:54', '18-05-2020 08:44:33');
+
 
 --
 -- Indexes for dumped tables
